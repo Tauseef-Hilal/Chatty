@@ -7,7 +7,7 @@ import {
   getRoomById,
   uploadMessage,
 } from "@/lib/db";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CustomForm from "@/components/home/form";
 import { isValidName } from "@/lib/abc";
 import homeStyles from "@/styles/home.module.css";
@@ -24,6 +24,14 @@ export default function Chat({ room }: ChatProps) {
   const [inputFieldClass, setInputFieldClass] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
+  const messageViewRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    messageViewRef.current?.scroll({
+      top: messageViewRef.current.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [messages]);
 
   useEffect(() => {
     const unsub = chatStream(room.id, (newMessages) =>
@@ -74,7 +82,7 @@ export default function Chat({ room }: ChatProps) {
         <span className={styles.green}>{room.name}</span>
       </header>
       <main className={styles.main}>
-        <section className={styles.messageView}>
+        <section ref={messageViewRef} className={styles.messageView}>
           {messages.reverse().map((message) => {
             return (
               <div key={message.id} className={styles.message}>
