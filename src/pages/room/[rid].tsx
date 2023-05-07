@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import ChatRoom from "@/models/room";
 import {
@@ -79,7 +79,7 @@ export default function Chat({ room }: ChatProps) {
         className={styles.header}
       >
         <span className={styles.gold}>#</span>
-        <span className={styles.green}>{room.name}</span>
+        <span className={styles.green}>{room?.name}</span>
       </header>
       <main className={styles.main}>
         <section ref={messageViewRef} className={styles.messageView}>
@@ -137,17 +137,7 @@ export default function Chat({ room }: ChatProps) {
   );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = (await getAllRoomIds()).map((id) => {
-    return {
-      params: { rid: id },
-    };
-  });
-
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const room = await getRoomById(params?.rid as string);
   return {
     props: { room },
