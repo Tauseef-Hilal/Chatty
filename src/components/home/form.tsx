@@ -9,21 +9,27 @@ type FormProps = {
   formLabel: string;
   inputValue: string;
   inputPlaceholder: string;
-  inputFieldClass: string;
+  inputFieldComment?: string;
+  inputFieldCommentClass?: string;
+  inputFieldClass?: string;
   inputChangeHandler: (value: string) => void;
   formButtonData: FormButtonData[];
+  centerSelf?: boolean;
 };
 
 export default function CustomForm({
   formLabel,
   inputValue,
   inputPlaceholder,
+  inputFieldComment,
+  inputFieldCommentClass,
   inputFieldClass,
   inputChangeHandler,
   formButtonData,
+  centerSelf = false,
 }: FormProps) {
   return (
-    <div className={styles.form}>
+    <div className={`${styles.form} ${centerSelf ? styles.centerSelf : ""}`}>
       <div className={styles.formContent}>
         <label className={styles.formFieldLabel} htmlFor="formField">
           {formLabel}
@@ -37,6 +43,10 @@ export default function CustomForm({
           id="formField"
           placeholder={inputPlaceholder}
         />
+
+        <p className={`${styles.fieldComment} ${inputFieldCommentClass}`}>
+          {inputFieldComment}
+        </p>
       </div>
 
       <div className={styles.formBtns}>

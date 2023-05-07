@@ -9,8 +9,17 @@
   color: white;
 }
 
-.heading {
-  font-size: 3em;
+.heading1 {
+  text-align: center;
+  font-size: 2.6em;
+  font-weight: 700;
+  color: rgb(244, 248, 255);
+}
+
+.heading2 {
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 700;
   color: rgb(244, 248, 255);
 }
 
@@ -19,9 +28,17 @@
 }
 
 .invalid:focus {
-  border: 2px solid rgb(154, 78, 65);
+  border: 2px solid rgb(174, 77, 73);
+}
+
+.invalidComment {
+  color: rgb(174, 77, 73) !important;
 }
 
 .valid:focus {
-  border: 2px solid rgba(62, 169, 159, 0.548);
+  border: 2px solid rgba(62, 169, 158, 0.918);
+}
+
+.validComment {
+  color: rgb(62, 169, 158) !important;
 }

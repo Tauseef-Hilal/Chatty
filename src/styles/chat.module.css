@@ -1,0 +1,111 @@
+.green {
+  color: rgb(45, 207, 191);
+}
+
+.gold {
+  color: rgb(243, 198, 74);
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  font-size: 2em;
+  font-weight: bold;
+  height: 8vh;
+  background-color: rgb(28, 31, 36);
+}
+
+.header:hover {
+  text-decoration: underline;
+  color: rgb(243, 198, 74);
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(34, 38, 45);
+  height: 92vh;
+}
+
+.messageView {
+  width: 100%;
+  height: 80vh;
+  margin-bottom: 100px;
+}
+
+.chatInput {
+  position: fixed;
+  bottom: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.messageField {
+  all: unset;
+  border-radius: 8px;
+  padding: 14px 16px;
+  width: 60%;
+  color: rgb(163, 200, 233);
+  background-color: rgb(23, 26, 29);
+  box-shadow: 0 8px 0 rgba(23, 26, 29, 0.5);
+}
+
+.messageField:focus {
+  box-shadow: 0 6px 0 rgba(163, 200, 233, 0.6);
+}
+
+.messageField:focus::placeholder {
+  color: rgba(163, 200, 233, 0.6);
+}
+
+.sendMessageBtn {
+  padding: 12px 18px;
+  background-color: rgb(163, 200, 233);
+  border-radius: 8px;
+  color: black;
+  font-weight: 700;
+  box-shadow: 0 6px 0 rgba(163, 200, 233, 0.6);
+  transition: transform 0.3s cubic-bezier(0.34, 1.23, 0.22, 1.1),
+    box-shadow 0.3s cubic-bezier(0.34, 1.23, 0.22, 1.1);
+}
+
+.sendMessageBtn:hover {
+  transform: translate3d(0, 2px, 0);
+  box-shadow: 0 4px 0 rgba(163, 200, 233, 0.6);
+}
+
+.sendMessageBtn:active {
+  transform: translate3d(0, 4px, 0);
+  box-shadow: 0 2px 0 rgba(163, 200, 233, 0.6);
+}
+
+.message {
+  padding: 12px;
+  font-size: 1em;
+}
+
+.messageAuthor {
+  color: rgb(243, 198, 74);
+  font-weight: 500;
+  font-size: 1.4em;
+}
+
+.messageContent {
+  color: rgb(45, 207, 191);
+  font-size: 1.2em;
+  padding-left: 12px;
+}
+
+.message:nth-child(2n) {
+  background-color: rgb(28, 31, 36);
+}
+
+.message:nth-child(2n + 1) {
+  background-color: rgb(31, 34, 41);
+}

@@ -10,6 +10,12 @@
   box-shadow: 0 0 8px rgb(27, 29, 31);
 }
 
+.centerSelf {
+  position: fixed;
+  top: calc(50% - 125px);
+  left: calc(50% - 220px);
+}
+
 .formContent {
   display: flex;
   flex-direction: column;
@@ -18,7 +24,6 @@
 
 .formField {
   all: unset;
-  color: black;
   background-color: rgb(38, 40, 43);
   padding: 12px;
   border-radius: 4px;
@@ -30,27 +35,53 @@
 
 .formFieldLabel {
   color: rgb(45, 207, 191);
+  font-weight: 500;
+}
+
+.fieldComment {
+  color: rgb(205, 187, 84);
+  font-size: 0.7em;
+  text-align: center;
 }
 
 .formBtns {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .formBtn {
-  padding: 8px 12px;
-  background-color: rgb(45, 207, 191);
+  padding: 6px 12px;
+  background-color: rgb(49, 238, 219);
   border-radius: 8px;
   color: black;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.8em;
-  box-shadow: 0 6px 0 rgba(45, 207, 191, 0.548);
+  box-shadow: 0 6px 0 rgba(49, 238, 219, 0.6);
   transition: transform 0.3s cubic-bezier(0.34, 1.23, 0.22, 1.1),
     box-shadow 0.3s cubic-bezier(0.34, 1.23, 0.22, 1.1);
 }
 
 .formBtn:hover {
   transform: translate3d(0, 2px, 0);
-  box-shadow: 0 4px 0 rgba(45, 207, 191, 0.548);
+  box-shadow: 0 4px 0 rgba(49, 238, 219, 0.6);
+}
+
+.formBtn:active {
+  transform: translate3d(0, 4px, 0);
+  box-shadow: 0 2px 0 rgba(49, 238, 219, 0.6);
+}
+
+.formBtn:nth-child(2) {
+  background-color: rgb(243, 198, 74);
+  box-shadow: 0 6px 0 rgba(243, 198, 74, 0.6);
+}
+
+.formBtn:nth-child(2):hover {
+  box-shadow: 0 4px 0 rgba(243, 198, 74, 0.6);
+}
+
+.formBtn:nth-child(2):active {
+  transform: translate3d(0, 4px, 0);
+  box-shadow: 0 2px 0 rgba(243, 198, 74, 0.6);
 }
