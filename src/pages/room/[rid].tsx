@@ -83,7 +83,7 @@ export default function Chat({ room }: ChatProps) {
       </header>
       <main className={styles.main}>
         <section ref={messageViewRef} className={styles.messageView}>
-          {messages.reverse().map((message) => {
+          {messages.map((message) => {
             return (
               <div key={message.id} className={styles.message}>
                 <span className={styles.messageAuthor}>{message.author}:</span>
@@ -134,7 +134,7 @@ export default function Chat({ room }: ChatProps) {
         />
       )}
     </>
-  );
+  )
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {

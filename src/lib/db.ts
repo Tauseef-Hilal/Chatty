@@ -61,8 +61,8 @@ export function chatStream(
   roomId: string,
   onUpdate: (data: Message[]) => void
 ): Unsubscribe {
-  return onSnapshot(collection(db, "rooms", roomId, "messages"), (doc) => {
-    const messages = doc.docs.map((doc) => doc.data() as Message);
+  return onSnapshot(collection(db, "rooms", roomId, "messages"), (snap) => {
+    const messages = snap.docs.map((doc) => doc.data() as Message);
     onUpdate(messages);
   });
 }
