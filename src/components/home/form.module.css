@@ -1,0 +1,56 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  width: 440px;
+  gap: 32px;
+  font-size: 1.4em;
+  background-color: rgb(23, 26, 29);
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgb(27, 29, 31);
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formField {
+  all: unset;
+  color: black;
+  background-color: rgb(38, 40, 43);
+  padding: 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  color: gainsboro;
+  border: 2px solid rgb(38, 40, 43);
+}
+
+.formFieldLabel {
+  color: rgb(45, 207, 191);
+}
+
+.formBtns {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.formBtn {
+  padding: 8px 12px;
+  background-color: rgb(45, 207, 191);
+  border-radius: 8px;
+  color: black;
+  font-weight: 600;
+  font-size: 0.8em;
+  box-shadow: 0 6px 0 rgba(45, 207, 191, 0.548);
+  transition: transform 0.3s cubic-bezier(0.34, 1.23, 0.22, 1.1),
+    box-shadow 0.3s cubic-bezier(0.34, 1.23, 0.22, 1.1);
+}
+
+.formBtn:hover {
+  transform: translate3d(0, 2px, 0);
+  box-shadow: 0 4px 0 rgba(45, 207, 191, 0.548);
+}
