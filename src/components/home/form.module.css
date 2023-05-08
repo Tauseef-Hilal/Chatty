@@ -99,6 +99,11 @@
     width: 420px;
     padding: 32px;
   }
+
+  .centerSelf {
+    top: calc(50% - 125px);
+    left: calc(50% - 210px);
+  }
 }
 
 @media screen and (max-width: 420px) {
