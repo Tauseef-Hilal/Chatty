@@ -124,6 +124,7 @@ export default function Chat({ room }: ChatProps) {
           inputValue={username}
           inputPlaceholder="Eg. strange_guy"
           inputFieldClass={inputFieldClass}
+          onEnterPressed={handleUsernameSubmit}
           inputChangeHandler={onUsernameChange}
           formButtonData={[
             {

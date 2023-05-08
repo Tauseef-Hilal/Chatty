@@ -7,11 +7,12 @@
 }
 
 .header {
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2em;
-  font-weight: bold;
   height: 8vh;
+  font-weight: bold;
   background-color: rgb(28, 31, 36);
 }
 
@@ -32,13 +33,13 @@
 
 .messageView {
   width: 100%;
-  height: 80vh;
+  height: 78vh;
   overflow: scroll;
 }
 
 .chatInput {
   position: fixed;
-  bottom: 60px;
+  bottom: 40px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -108,4 +109,24 @@
 
 .message:nth-child(2n + 1) {
   background-color: rgb(31, 34, 41);
+}
+
+@media screen and (min-width: 770px) {
+  .chatInput {
+    width: 770px;
+  }
+
+  .message {
+    padding-left: 20%;
+  }
+}
+
+@media screen and (max-height: 570px) {
+  .messageView {
+    height: 75vh;
+  }
+
+  .chatInput {
+    gap: 8px;
+  }
 }

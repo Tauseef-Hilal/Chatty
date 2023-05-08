@@ -123,6 +123,7 @@ export default function Home() {
             inputPlaceholder="Eg. 12345678"
             inputFieldComment={inputFieldComment}
             inputFieldCommentClass={inputFieldCommentClass}
+            onEnterPressed={handleJoinRoom}
             inputChangeHandler={handleRoomIdChange}
             formButtonData={[
               {
@@ -141,6 +142,7 @@ export default function Home() {
             inputFieldClass={inputFieldClass}
             inputFieldComment={inputFieldComment}
             inputFieldCommentClass={inputFieldCommentClass}
+            onEnterPressed={handleCreateRoom}
             inputChangeHandler={handleRoomNameChange}
             formButtonData={[
               {

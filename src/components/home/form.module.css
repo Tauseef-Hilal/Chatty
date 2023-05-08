@@ -51,12 +51,14 @@
 }
 
 .formBtn {
+  flex: 1;
   padding: 6px 12px;
   background-color: rgb(49, 238, 219);
   border-radius: 8px;
   color: black;
   font-weight: 700;
   font-size: 0.8em;
+  text-align: center;
   box-shadow: 0 6px 0 rgba(49, 238, 219, 0.6);
   transition: transform 0.3s cubic-bezier(0.34, 1.23, 0.22, 1.1),
     box-shadow 0.3s cubic-bezier(0.34, 1.23, 0.22, 1.1);
@@ -72,7 +74,13 @@
   box-shadow: 0 2px 0 rgba(49, 238, 219, 0.6);
 }
 
+.formBtn:first-child {
+  min-width: 110px;
+}
+
 .formBtn:nth-child(2) {
+  flex: 2;
+  min-width: 180px;
   background-color: rgb(243, 198, 74);
   box-shadow: 0 6px 0 rgba(243, 198, 74, 0.6);
 }
@@ -84,4 +92,28 @@
 .formBtn:nth-child(2):active {
   transform: translate3d(0, 4px, 0);
   box-shadow: 0 2px 0 rgba(243, 198, 74, 0.6);
+}
+
+@media screen and (max-width: 420px) {
+  .form {
+    width: 320px;
+    padding: 32px;
+  }
+
+  .formBtn {
+    font-size: 0.6em;
+  }
+
+  .formBtn:first-child {
+    min-width: 80px;
+  }
+
+  .formBtn:nth-child(2) {
+    min-width: 130px;
+  }
+
+  .centerSelf {
+    top: calc(50% - 125px);
+    left: calc(50% - 160px);
+  }
 }

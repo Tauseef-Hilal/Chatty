@@ -12,6 +12,7 @@ type FormProps = {
   inputFieldComment?: string;
   inputFieldCommentClass?: string;
   inputFieldClass?: string;
+  onEnterPressed?: () => void;
   inputChangeHandler: (value: string) => void;
   formButtonData: FormButtonData[];
   centerSelf?: boolean;
@@ -24,6 +25,7 @@ export default function CustomForm({
   inputFieldComment,
   inputFieldCommentClass,
   inputFieldClass,
+  onEnterPressed,
   inputChangeHandler,
   formButtonData,
   centerSelf = false,
@@ -37,6 +39,10 @@ export default function CustomForm({
 
         <input
           onChange={(e) => inputChangeHandler(e.target.value)}
+          onKeyUp={(e) => {
+            if (!onEnterPressed || e.key != "Enter") return;
+            onEnterPressed();
+          }}
           value={inputValue}
           className={`${styles.formField} ${inputFieldClass}`}
           type="text"

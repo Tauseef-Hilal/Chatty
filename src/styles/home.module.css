@@ -42,3 +42,13 @@
 .validComment {
   color: rgb(62, 169, 158) !important;
 }
+
+@media screen and (max-width: 420px) {
+  .heading2 {
+    font-size: 1em;
+  }
+
+  .heading1 {
+    font-size: 2.2em;
+  }
+}
