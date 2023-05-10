@@ -12,8 +12,9 @@
 
 .centerSelf {
   position: fixed;
-  top: calc(50% - 125px);
-  left: calc(50% - 220px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .formContent {
@@ -99,11 +100,6 @@
     width: 420px;
     padding: 32px;
   }
-
-  .centerSelf {
-    top: calc(50% - 125px);
-    left: calc(50% - 210px);
-  }
 }
 
 @media screen and (max-width: 420px) {
@@ -122,10 +118,5 @@
 
   .formBtn:nth-child(2) {
     min-width: 130px;
-  }
-
-  .centerSelf {
-    top: calc(50% - 125px);
-    left: calc(50% - 160px);
   }
 }
