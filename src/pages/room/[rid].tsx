@@ -94,6 +94,7 @@ export default function Chat({ room }: ChatProps) {
         </section>
         <section className={styles.chatInput}>
           <input
+            disabled={!isUsernameSet}
             onChange={(e) => {
               setMessage(e.target.value);
             }}
@@ -108,6 +109,7 @@ export default function Chat({ room }: ChatProps) {
             placeholder="Message"
           />
           <button
+            disabled={!isUsernameSet}
             className={styles.sendMessageBtn}
             type="button"
             onClick={sendMessage}
@@ -135,7 +137,7 @@ export default function Chat({ room }: ChatProps) {
         />
       )}
     </>
-  )
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {

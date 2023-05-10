@@ -65,6 +65,10 @@
   color: rgba(163, 200, 233, 0.6);
 }
 
+.messageField:disabled {
+  cursor: not-allowed;
+}
+
 .sendMessageBtn {
   padding: 12px 18px;
   background-color: rgb(163, 200, 233);
@@ -76,14 +80,18 @@
     box-shadow 0.3s cubic-bezier(0.34, 1.23, 0.22, 1.1);
 }
 
-.sendMessageBtn:hover {
+.sendMessageBtn:not(:disabled):hover {
   transform: translate3d(0, 2px, 0);
   box-shadow: 0 4px 0 rgba(163, 200, 233, 0.6);
 }
 
-.sendMessageBtn:active {
+.sendMessageBtn:not(:disabled):hover {
   transform: translate3d(0, 4px, 0);
   box-shadow: 0 2px 0 rgba(163, 200, 233, 0.6);
+}
+
+.sendMessageBtn:disabled {
+  cursor: not-allowed;
 }
 
 .message {
