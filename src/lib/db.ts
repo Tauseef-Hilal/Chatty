@@ -57,7 +57,7 @@ export async function uploadMessage(roomId: string, message: Message) {
   );
 }
 
-export function chatStream(
+export function subscribeToDocChanges(
   roomId: string,
   onUpdate: (data: Message[]) => void
 ): Unsubscribe {

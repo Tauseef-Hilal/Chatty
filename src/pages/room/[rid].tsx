@@ -2,7 +2,7 @@ import { GetServerSideProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import ChatRoom from "@/models/room";
 import {
-  chatStream,
+  subscribeToDocChanges,
   getAllRoomIds,
   getRoomById,
   uploadMessage,
@@ -34,11 +34,23 @@ export default function Chat({ room }: ChatProps) {
   }, [messages]);
 
   useEffect(() => {
-    const unsub = chatStream(room.id, (newMessages) =>
+    loadCachedUsername();
+
+    // Subscribe to realtime chat updates
+    const unsub = subscribeToDocChanges(room.id, (newMessages) =>
       setMessages(newMessages)
     );
+
     return () => unsub();
   }, []);
+
+  function loadCachedUsername() {
+    const cachedUsername = localStorage.getItem(`username-${room.id}`);
+    if (cachedUsername) {
+      setUsername(cachedUsername);
+      setIsUsernameSet(true);
+    }
+  }
 
   function onUsernameChange(newUsername: string) {
     setUsername(newUsername);
@@ -53,6 +65,9 @@ export default function Chat({ room }: ChatProps) {
   function handleUsernameSubmit() {
     if (!isValidName(username)) return;
     setIsUsernameSet(true);
+
+    // Cache username
+    localStorage.setItem(`username-${room.id}`, username);
   }
 
   function sendMessage() {
