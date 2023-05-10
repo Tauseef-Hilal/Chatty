@@ -85,7 +85,7 @@
   box-shadow: 0 4px 0 rgba(163, 200, 233, 0.6);
 }
 
-.sendMessageBtn:not(:disabled):hover {
+.sendMessageBtn:not(:disabled):active {
   transform: translate3d(0, 4px, 0);
   box-shadow: 0 2px 0 rgba(163, 200, 233, 0.6);
 }
